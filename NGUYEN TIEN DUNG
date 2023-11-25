@@ -1,0 +1,38 @@
+using System.Text;
+
+namespace BT6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            int menhGia50K = 50000;
+            Console.Write("Nhập số tiền (là bội số của 50.000): ");
+            int soTien = Convert.ToInt32(Console.ReadLine());
+            while (soTien % menhGia50K != 0)
+            {
+                Console.WriteLine("Số tiền không đúng là bội số của 50.000. Vui lòng  nhập lại.");
+
+
+                Console.Write("Nhập số tiền (là bội số của 50.000): ");
+                soTien = Convert.ToInt32(Console.ReadLine());
+            }
+            int[] menhGia = { 500000, 200000, 100000, 50000 };
+            int[] soTo = new int[4];
+            for (int i = 0; i < menhGia.Length; i++)
+            {
+                soTo[i] = soTien / menhGia[i];
+                soTien %= menhGia[i];
+            }
+            for (int i = 0; i < menhGia.Length; i++)
+            {
+                if (soTo[i] > 0)
+                    Console.WriteLine("Mệnh giá {0}: {1} tờ", menhGia[i], soTo[i]);
+            }
+            Console.ReadKey();
+        }
+    }
+}
+
+            
