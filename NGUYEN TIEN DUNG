@@ -1,0 +1,49 @@
+namespace BT5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Nhập điểm trung bình từ bàn phím
+            Console.Write("Nhap điem trung binh cua hoc sinh: ");
+            double diemTrungBinh = Convert.ToDouble(Console.ReadLine());
+
+            // Xếp loại học sinh
+            string xepLoai = XepLoaiHocSinh(diemTrungBinh);
+
+            // Xuất kết quả
+            Console.WriteLine($"Hoc sinh duoc xep loai: {xepLoai}");
+
+            Console.ReadLine();
+        }
+
+        // Phương thức để xếp loại học sinh dựa trên điểm trung bình
+        static string XepLoaiHocSinh(double diemTrungBinh)
+        {
+            if (diemTrungBinh >= 9.0)
+            {
+                return "Xuất sắc";
+            }
+            else if (diemTrungBinh >= 8.0)
+            {
+                return "Giỏi";
+            }
+            else if (diemTrungBinh >= 6.5)
+            {
+                return "Khá";
+            }
+            else if (diemTrungBinh >= 5.0)
+            {
+                return "Trung bình";
+            }
+            else if (diemTrungBinh >= 3.5)
+            {
+                return "Yếu";
+            }
+            else
+            {
+                return "Kém";
+            }
+        }
+    }
+}
