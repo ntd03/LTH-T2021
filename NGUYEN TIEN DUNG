@@ -1,0 +1,43 @@
+using System;
+using System.Text;
+
+namespace Bai7
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+
+            // Nhập chỉ số điện cũ
+            Console.Write("Nhập chỉ số điện cũ: ");
+            int chiSoCu = Convert.ToInt32(Console.ReadLine());
+
+            // Nhập chỉ số điện mới
+            Console.Write("Nhập chỉ số điện mới: ");
+            int chiSoMoi = Convert.ToInt32(Console.ReadLine());
+
+            // Tính số điện tiêu thụ
+            int soDienTieuThu = chiSoMoi - chiSoCu;
+
+            // Tỷ lệ thuế VAT
+            const double VATRate = 0.1;
+
+            // Đơn giá điện tính theo VNĐ/kWh
+            const double GiaBanDien = 3000;
+
+            // Tính tiền điện
+            double tienDien = soDienTieuThu * GiaBanDien;
+
+            // Tính tiền điện bao gồm VAT
+            double tienDienVAT = tienDien + (tienDien * VATRate);
+
+            // Xuất kết quả
+            Console.WriteLine($"Số điện tiêu thụ: {soDienTieuThu}");
+            Console.WriteLine($"Tiền điện: {tienDien} VNĐ");
+            Console.WriteLine($"Tiền điện (đã bao gồm VAT): {tienDienVAT} VNĐ");
+
+            Console.ReadKey();
+        }
+    }
+}
